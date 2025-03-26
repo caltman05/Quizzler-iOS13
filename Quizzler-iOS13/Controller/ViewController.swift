@@ -6,6 +6,9 @@
 //  Copyright © 2019 The App Brewery. All rights reserved.
 //
 
+// Added an Animation for when the answer is selected that fades in and out
+// Also added sounds that play when the user selects a correct or incorrect answer.
+
 import UIKit
 
 class ViewController: UIViewController {
@@ -33,20 +36,24 @@ class ViewController: UIViewController {
     }
     
     @IBAction func answerButtonPressed(_ sender: UIButton) {
-        
         let userAnswer = sender.currentTitle!
         let userGotItRight = quizBrain.checkAnswer(userAnswer)
         
-        if userGotItRight {
-            sender.backgroundColor = UIColor.green
-        } else {
-            sender.backgroundColor = UIColor.red
+        //animate the button color change based on if the user got it right
+        UIView.animate(withDuration: 0.5) {
+            sender.backgroundColor = userGotItRight ? UIColor.green : UIColor.red
         }
         
-        quizBrain.nextQuestion()
-        
-        Timer.scheduledTimer(timeInterval: 0.2,target:self, selector: #selector(updateUI), userInfo: nil, repeats: false)
-        
+        //set a timer so that the UI is not updated before the animation finishes
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
+            self.quizBrain.nextQuestion()
+            self.updateUI()
+            
+        //change it back
+            UIView.animate(withDuration: 0.3) {
+                sender.backgroundColor = UIColor.clear
+            }
+        }
     }
     
     @objc func updateUI() {

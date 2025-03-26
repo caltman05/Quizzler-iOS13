@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import AVFoundation
 
 struct QuizBrain {
     let quiz = [
@@ -30,8 +31,10 @@ struct QuizBrain {
     mutating func checkAnswer(_ userAnswer: String) -> Bool{
         if userAnswer == quiz[questionNumber].answer {
             score+=1
+            playSound(name: "correct")
             return true
         } else {
+            playSound(name: "wrong")
             return false
         }
     }
@@ -56,4 +59,16 @@ struct QuizBrain {
     func getScore() -> Int {
         return score
     }
+    
+    ///Audio player for playing correct or incorrect sound
+    var audioPlayer: AVAudioPlayer?
+
+    mutating func playSound(name: String) {
+        if let path = Bundle.main.path(forResource: name, ofType: "mp3") {
+            let url = URL(fileURLWithPath: path)
+            audioPlayer = try? AVAudioPlayer(contentsOf: url)
+            audioPlayer?.play()
+        }
+    }
+
 }

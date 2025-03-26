@@ -16,6 +16,8 @@
 		AD7631B622F9851900C6E71B /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = AD7631B522F9851900C6E71B /* README.md */; };
 		E193C4F72D919A0E00054E58 /* Question.swift in Sources */ = {isa = PBXBuildFile; fileRef = E193C4F62D919A0E00054E58 /* Question.swift */; };
 		E193C4FC2D91A5CD00054E58 /* QuizBrain.swift in Sources */ = {isa = PBXBuildFile; fileRef = E193C4FB2D91A5C900054E58 /* QuizBrain.swift */; };
+		E1DC883F2D9438C1007C2ED5 /* correct.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E1DC883E2D9438C0007C2ED5 /* correct.mp3 */; };
+		E1DC88412D9438C4007C2ED5 /* wrong.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E1DC88402D9438C4007C2ED5 /* wrong.mp3 */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +32,8 @@
 		AD7631B522F9851900C6E71B /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		E193C4F62D919A0E00054E58 /* Question.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Question.swift; sourceTree = "<group>"; };
 		E193C4FB2D91A5C900054E58 /* QuizBrain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizBrain.swift; sourceTree = "<group>"; };
+		E1DC883E2D9438C0007C2ED5 /* correct.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = correct.mp3; sourceTree = "<group>"; };
+		E1DC88402D9438C4007C2ED5 /* wrong.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = wrong.mp3; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,6 +75,8 @@
 				AD4BDE5222D878BC005BA4CC /* Assets.xcassets */,
 				AD4BDE5422D878BC005BA4CC /* LaunchScreen.storyboard */,
 				AD4BDE5722D878BC005BA4CC /* Info.plist */,
+				E1DC883E2D9438C0007C2ED5 /* correct.mp3 */,
+				E1DC88402D9438C4007C2ED5 /* wrong.mp3 */,
 			);
 			path = "Quizzler-iOS13";
 			sourceTree = "<group>";
@@ -159,6 +165,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				AD4BDE5622D878BC005BA4CC /* LaunchScreen.storyboard in Resources */,
+				E1DC883F2D9438C1007C2ED5 /* correct.mp3 in Resources */,
+				E1DC88412D9438C4007C2ED5 /* wrong.mp3 in Resources */,
 				AD4BDE5322D878BC005BA4CC /* Assets.xcassets in Resources */,
 				AD7631B622F9851900C6E71B /* README.md in Resources */,
 				AD4BDE5122D878BA005BA4CC /* Main.storyboard in Resources */,
